@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Utente;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 
 class UtenteSeeder extends Seeder
 {
@@ -12,6 +14,6 @@ class UtenteSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Utente::factory(10)->create();
     }
 }

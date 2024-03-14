@@ -16,8 +16,10 @@ class AttivitaFactory extends Factory
      */
     public function definition(): array
     {
+        $attivita = ['Task1', 'Task2', 'Task3', 'Task4', 'Task5'];
         return [
-            //
+            'nome' => fake()->randomElement($attivita),
+            'descrizione' => fake()->text()
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Attivita;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class AttivitaSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Attivita::factory(10)->create();
     }
 }
