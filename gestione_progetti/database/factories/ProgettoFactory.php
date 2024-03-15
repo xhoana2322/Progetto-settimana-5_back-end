@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 use App\Models\Attivita;
-use App\Models\Utente;
+use App\Models\User;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,7 +21,7 @@ class ProgettoFactory extends Factory
         return [
             'titolo'=> fake()->unique()->text(30),
             'descrizione'=> fake()->text(200),
-            'utentes_id'=>Utente::get()->random()->id,
+            'users_id'=>User::get()->random()->id,
             'attivitas_id'=>Attivita::get()->random()->id
         ];
     }

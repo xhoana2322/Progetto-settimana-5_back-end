@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Utente;
-use App\Http\Requests\StoreUtenteRequest;
-use App\Http\Requests\UpdateUtenteRequest;
+use Illuminate\Http\Request;
+use App\Models\User;
 
-class UtenteController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return User::get();
     }
 
     /**
@@ -27,7 +26,7 @@ class UtenteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreUtenteRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -35,7 +34,7 @@ class UtenteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Utente $utente)
+    public function show(string $id)
     {
         //
     }
@@ -43,7 +42,7 @@ class UtenteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Utente $utente)
+    public function edit(string $id)
     {
         //
     }
@@ -51,7 +50,7 @@ class UtenteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUtenteRequest $request, Utente $utente)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,7 +58,7 @@ class UtenteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Utente $utente)
+    public function destroy(string $id)
     {
         //
     }

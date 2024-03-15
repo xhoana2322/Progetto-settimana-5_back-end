@@ -13,7 +13,8 @@ class ProgettoController extends Controller
      */
     public function index()
     {
-        //
+        return view('homepage', ['progetti' => Progetto::get()]);
+        // return Progetto::get();
     }
 
     /**

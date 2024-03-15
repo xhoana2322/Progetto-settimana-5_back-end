@@ -17,16 +17,16 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         // dati per il login di laravel
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('Pa$$w0rd!')
-        ]);
-
-        // $this->call([
-        //     UtenteSeeder::class,
-        //     AttivitaSeeder::class,
-        //     ProgettoSeeder::class
+        // User::factory()->create([
+        //     'name' => 'Admin',
+        //     'email' => 'admin@example.com',
+        //     'password' => Hash::make('Pa$$w0rd!')
         // ]);
+
+        $this->call([
+            // UserSeeder::class,
+            // AttivitaSeeder::class,
+            // ProgettoSeeder::class
+        ]);
     }
 }

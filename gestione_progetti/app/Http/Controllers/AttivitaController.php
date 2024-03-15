@@ -13,7 +13,8 @@ class AttivitaController extends Controller
      */
     public function index()
     {
-        //
+        return view('attivita', ['attivita' => Attivita::get()]);
+        return Attivita::get();
     }
 
     /**
