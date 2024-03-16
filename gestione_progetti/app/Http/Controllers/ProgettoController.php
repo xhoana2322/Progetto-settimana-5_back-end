@@ -13,7 +13,8 @@ class ProgettoController extends Controller
      */
     public function index()
     {
-        return view('homepage', ['progetti' => Progetto::get()]);
+        $progetti = Progetto::where('user_id', Auth::id())->get();
+        return view('dashboard', ['progetti' => $progetti]);
         // return Progetto::get();
     }
 
