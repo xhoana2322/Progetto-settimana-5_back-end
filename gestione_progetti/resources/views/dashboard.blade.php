@@ -16,12 +16,12 @@
                     <h1 class="modal-title fs-5" id="addProjectModalLabel">Aggiungi Progetto</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                    <form action="/progetto/progetto" method="POST">
+                    <form action="/progetto" method="post">
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" name="nome">
+                                <label for="titolo" class="form-label">Titolo</label>
+                                <input type="text" class="form-control" id="titolo" name="titolo">
                             </div>
                             <div class="mb-3">
                                 <label for="descrizione" class="form-label">Descrizione</label>
@@ -44,8 +44,8 @@
             <th scope="col">Users_ID</th>
             <th scope="col">Titolo</th>
             <th scope="col">Descrizione</th>
-            <th scope="col">Creato in data</th>
-            <th scope="col">Modificato in data</th>
+            <th scope="col">Creato il</th>
+            <th scope="col">Modificato il</th>
             <th scope="col">Azioni</th>
             </tr>
         </thead>

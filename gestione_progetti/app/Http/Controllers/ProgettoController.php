@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use App\Models\Progetto;
@@ -62,15 +64,14 @@ class ProgettoController extends Controller
      */
     public function update(UpdateProgettoRequest $request, Progetto $progetto)
     {
-        // if (Auth::id() !== $progetto->users_id) {
-        //     return redirect()->back();
-        // }
-
-        // $progetto->nome = $request->nome;
-        // $progetto->descrizione = $request->descrizione;
+        $progetto = new Progetto();
+        $progetto->nome = $request->nome;
+        $progetto->descrizione = $request->descrizione;
+        $progetto->users_id = Auth::id();
+        $queryBuilder = Progetto::create($progetto);
         // $progetto->save();
 
-        // return redirect()->route('dashboard');
+        return redirect()->action([ProgettoController::class, 'index']);
     }
 
     /**

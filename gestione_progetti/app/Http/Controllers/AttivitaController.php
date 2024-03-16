@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Attivita;
 use App\Http\Requests\StoreAttivitaRequest;
 use App\Http\Requests\UpdateAttivitaRequest;
@@ -13,8 +15,9 @@ class AttivitaController extends Controller
      */
     public function index()
     {
-        return view('attivita', ['attivita' => Attivita::get()]);
-        return Attivita::get();
+
+        // $attivita = DB::table('attivitas')->get();
+        // return view('attivita', ['attivita' => $attivita]);
     }
 
     /**
@@ -30,7 +33,7 @@ class AttivitaController extends Controller
      */
     public function store(StoreAttivitaRequest $request)
     {
-        //
+        // 
     }
 
     /**
@@ -38,7 +41,7 @@ class AttivitaController extends Controller
      */
     public function show(Attivita $attivita)
     {
-        //
+        return view('attivita', ['attivita' => $attivita]);
     }
 
     /**

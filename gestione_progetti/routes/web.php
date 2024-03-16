@@ -37,6 +37,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/dettaglio', function () {
-    return view('dettaglioprogetto');
-});
+// Route::get('/dettaglio', function () {
+//     return view('dettaglioprogetto');
+// });
