@@ -46,12 +46,8 @@ class ProgettoController extends Controller
      */
     public function show(Progetto $progetto)
     {
-        // $id = $progetto->id;
-        // $progetti = Progetto::where('user_id', Auth::id())->get();
-        // $progetti = DB::table('progettos')->get();
         return view('dettaglioprogetto', ['progetti' => $progetto]);
     }
-
 
     /**
      * Show the form for editing the specified resource.

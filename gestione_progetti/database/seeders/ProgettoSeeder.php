@@ -13,6 +13,6 @@ class ProgettoSeeder extends Seeder
      */
     public function run(): void
     {
-        Progetto::factory(7)->create();
+        Progetto::factory(5)->create();
     }
 }

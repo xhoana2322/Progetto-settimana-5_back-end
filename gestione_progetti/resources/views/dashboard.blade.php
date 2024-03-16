@@ -5,7 +5,7 @@
     @section('content')
 
     <div class="hero-modal">
-        <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addProjectModal">
+        <button type="button" class="btn btn-outline-success mb-3" data-bs-toggle="modal" data-bs-target="#addProjectModal">
             Aggiungi Progetto
         </button>
         <!-- modale aggiungere progetto  -->
@@ -28,8 +28,8 @@
                                 <textarea class="form-control" id="descrizione" name="descrizione"></textarea>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-outline-primary">Save changes</button>
                         </div>
                     </form>
                 </div>

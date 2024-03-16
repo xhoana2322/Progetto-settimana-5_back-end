@@ -22,7 +22,8 @@ class ProgettoFactory extends Factory
             'titolo'=> fake()->unique()->text(30),
             'descrizione'=> fake()->text(200),
             'users_id'=>User::get()->random()->id,
-            'attivitas_id'=>Attivita::get()->random()->id
+            'attivitas_id'=>Attivita::get()->random()->id,
+            'attivitas_nome'=>Attivita::get()->random()->nome
         ];
     }
 }

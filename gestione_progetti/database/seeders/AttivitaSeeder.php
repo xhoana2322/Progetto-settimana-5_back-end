@@ -13,6 +13,6 @@ class AttivitaSeeder extends Seeder
      */
     public function run(): void
     {
-        Attivita::factory(10)->create();
+        Attivita::factory(2)->create();
     }
 }
