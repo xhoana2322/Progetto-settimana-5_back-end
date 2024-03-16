@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use App\Models\Progetto;
 use App\Http\Requests\StoreProgettoRequest;
@@ -16,9 +15,8 @@ class ProgettoController extends Controller
      */
     public function index()
     {
-        $progetti = Progetto::where('user_id', Auth::id())->get();
-        return view('dashboard', ['progetti' => $progetti]);
-        // return Progetto::get();
+        $projects = DB::table('progettos')->get();
+        return view('dashboard', ['progetti' => $projects]);
     }
 
     /**
@@ -26,7 +24,7 @@ class ProgettoController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard');
     }
 
     /**
@@ -34,7 +32,13 @@ class ProgettoController extends Controller
      */
     public function store(StoreProgettoRequest $request)
     {
-        //
+        $progetto = new Progetto();
+        $progetto->nome = $request->nome;
+        $progetto->descrizione = $request->descrizione;
+        $progetto->users_id = Auth::id();
+        $progetto->save();
+
+        return redirect('/dashboard');
     }
 
     /**
@@ -42,8 +46,10 @@ class ProgettoController extends Controller
      */
     public function show(Progetto $progetto)
     {
-        $progetti = Progetto::where('user_id', Auth::id())->get();
-        return view('dashboard', ['project' => $progetti]);
+        // $id = $progetto->id;
+        // $progetti = Progetto::where('user_id', Auth::id())->get();
+        // $progetti = DB::table('progettos')->get();
+        return view('dettaglioprogetto', ['progetti' => $progetto]);
     }
 
 
@@ -60,7 +66,15 @@ class ProgettoController extends Controller
      */
     public function update(UpdateProgettoRequest $request, Progetto $progetto)
     {
-        //
+        // if (Auth::id() !== $progetto->users_id) {
+        //     return redirect()->back();
+        // }
+
+        // $progetto->nome = $request->nome;
+        // $progetto->descrizione = $request->descrizione;
+        // $progetto->save();
+
+        // return redirect()->route('dashboard');
     }
 
     /**
